@@ -180,11 +180,17 @@ const Sidebar = ({
 //   }
 // }
 // `;
+const navigateToDashboard = () => {
+  navigate("/dashboard");
+};
+
+
 const LogoLink = styled("a")({
   textDecoration: 'none',
   color: theme.palette.secondary.main,
   fontSize: '22px',
   fontWeight: 'bold',
+  cursor: 'pointer',
   "&:hover": {
     color: theme.palette.primary.main,
   },
@@ -234,7 +240,7 @@ const LogoLink = styled("a")({
                    }}>
                     
                     KSP Transport </a>  */}
-<LogoLink href="/dashboard">
+<LogoLink onClick={navigateToDashboard}>
                       KSP Transport
                     </LogoLink>
                    {/* KSP Transport */}
