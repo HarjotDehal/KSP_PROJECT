@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { TextField, Button, Typography, Box } from "@mui/material";
+import { TextField, Button, Typography, Box, AppBar,Toolbar } from "@mui/material";
 
 
 const SignIn = ({ onSignIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  // const theme = useTheme();
 
   const handleSignInClick = () => {
 
@@ -54,9 +55,18 @@ const SignIn = ({ onSignIn }) => {
   };
 
   return (
+
+
+    <>
+
+   
+      <Typography variant="h4" style={{ textAlign:"center", marginTop:"5%", fontSize:"76px", color:"#ffda85" }} >
+        KSP Transport
+      </Typography>
+  
     <Box m="1.5rem 2.5rem"> {/* Use the same margins as the Dashboard */}
       <Box display="flex" flexDirection="column" alignItems="center" mt={8}>
-        <Typography variant="h5">Sign In</Typography>
+        <Typography variant="h4">Sign In</Typography>
         <Box width={300} mt={3}>
           <TextField
             label="Username"
@@ -95,6 +105,9 @@ const SignIn = ({ onSignIn }) => {
         </Box>
       </Box>
     </Box>
+
+    </>
+
   );
 };
 
