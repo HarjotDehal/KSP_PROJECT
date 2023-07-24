@@ -21,6 +21,8 @@ import OverviewChart from "components/OverviewChart";
 import { useGetDashboardQuery } from "state/api";
 import StatBox from "components/StatBox";
 
+// import { useEffect } from "react";
+
 const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
@@ -87,6 +89,19 @@ const Dashboard = () => {
       renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
     },
   ];
+
+
+  // useEffect(() => {
+  //   // Check if the user just refreshed the page by looking for a session storage item
+  //   const isRefreshed = sessionStorage.getItem("isRefreshed");
+
+  //   // If the user just refreshed, redirect them to "/"
+  //   if (isRefreshed) {
+  //     sessionStorage.removeItem("isRefreshed"); // Remove the session storage item to avoid redirect on subsequent renders
+  //     window.location.replace("/"); // Redirect to the specified URL
+  //   }
+  // }, []);
+
 
   return (
     <Box m="1.5rem 2.5rem">
