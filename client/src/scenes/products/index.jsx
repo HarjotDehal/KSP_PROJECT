@@ -317,6 +317,8 @@ const Products = () => {
     // console.log(response);
 // console.log(selectedLoadId);
       setIsEditModalOpen(false);
+
+      refetch()
     } catch (error) {
       console.log(error);
     }
