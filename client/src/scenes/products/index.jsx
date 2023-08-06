@@ -240,9 +240,10 @@ const Product = ({
 
 const Products = () => {
 
+  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-
-  const { data, isLoading } = useGetProductsQuery();
+  const { data, isLoading,refetch } = useGetProductsQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newLoadData, setNewLoadData] = useState({
@@ -328,15 +329,41 @@ const Products = () => {
 
   useEffect(() => {
     if (isSuccess ) {
+
+
+
       // Page refresh after successful post request
-      window.location.reload();
+      // window.location.reload();
+      
+
+      // navigate('/')
+      // setNewLoadData({
+      //   CompanyName: "",
+      //   loadNumber: "",
+      //   loadPrice: 0,
+      //   loadPickup: "",
+      //   loadDropoff: "",
+      //   loadLumper: 0,
+      //   loadBOL: "",
+      //   loadInvoice: "",
+      //   BOLPDF: "",
+      // });
+   
+   
+   
+   
+   
+   
     }
+
+
+
   }, [isSuccess]);
 
 
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleModalOpen = () => {
     setIsModalOpen(true);
@@ -390,6 +417,9 @@ const Products = () => {
 
     });
     setIsModalOpen(false);
+
+
+    refetch();
   }catch (error) {
     // Handle error
     console.log(error);

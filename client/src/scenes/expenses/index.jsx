@@ -568,7 +568,7 @@ const Expenses = () => {
 
 
 
-  const { data, isLoading } = useGetExpensesQuery();
+  const { data, isLoading,refetch } = useGetExpensesQuery();
   const [selectedField, setSelectedField] = useState('');
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -693,7 +693,7 @@ const Expenses = () => {
   useEffect(() => {
     if (isSuccess ) {
       // Page refresh after successful post request
-      window.location.reload();
+      // window.location.reload();
     }
   }, [isSuccess]);
 
@@ -779,6 +779,7 @@ const Expenses = () => {
 
     });
     setIsModalOpen(false);
+    refetch();
   }catch (error) {
     // Handle error
     console.log(error);
