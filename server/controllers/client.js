@@ -1228,8 +1228,8 @@ const monthlyProducts = [];
 
 for (let month = 1; month <= 12; month++) {
   const year = new Date().getFullYear(); // Use the current year
-  const startDate = new Date(year, month - 1, 1); // Start date of the month
-  const endDate = new Date(year, month, 0); // End date of the month (last day)
+  const startDate = new Date(2023, month - 1, 1); // Start date of the month
+  const endDate = new Date(2023, month, 0); // End date of the month (last day)
 
   // Fetch expenses for the current month
   const expenses = await Expense.find({
